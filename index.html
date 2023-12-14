@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philocalist Detection </title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <header class="white-bg">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm py-3 py-lg-0 px-3">
+            <a href="https://www.orbitguru.org/login/index.php" class="navbar-brand ms-lg-5">
+                <img src="https://storage.googleapis.com/kampusmerdeka_kemdikbud_go_id/mitra/mitra_6104fd05-e57e-418b-aa30-e477b8e50af3.png" alt="Orbit Future Academy" width="200px">
+            </a>
+            <img class="img-fluid rounded-top" src="static/images/logo2.png" alt="" width="50" style="margin-left: 10px;">
+            </a>"
+        </nav>
+    </header>
+
+    <style> 
+
+    .white-bg {
+        background-color: #fff; /* Warna latar belakang putih */
+    }
+    
+    .img-custom-size {
+            width: 210px; /* Gantilah dengan lebar yang diinginkan */
+            height: 350px; /* Gantilah dengan tinggi yang diinginkan */
+            object-fit: cover;
+            border-radius: 10px; /* Gantilah dengan border-radius yang diinginkan */
+        }
+
+    .text-body {
+      font-size: 24px; /* Ubah ukuran teks sesuai kebutuhan Anda */
+    }
+
+    .text-white {
+            color: white;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+      color: white; /* Warna teks di dalam tag h2 */
+    }
+
+    .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    .card {
+        border: 1px solid #ddd; /* Warna border */
+        border-radius: 10px; /* Rounding border */
+        margin: 10px; /* Jarak antara card */
+    .text-container img {
+    border: none; /* Menghilangkan border dari gambar */
+        }
+    }   
+    .text-container h5,
+    .text-container h1 {
+        margin: 0; /* Menghilangkan margin pada elemen h5 dan h1 */
+    }
+    .text-container {
+        max-width: 900px;
+        text-align: center;
+        padding: 50px;
+    }
+    .smaller-image {
+    width: 1250px; /* Sesuaikan dengan ukuran yang diinginkan */
+    }
+
+    /* Center the content of the carousel item */
+    .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Sesuaikan tinggi sesuai kebutuhan */
+    }
+
+    body 
+        {
+            background-color: #04223f; /* Warna latar belakang body */
+        }
+
+        .special-container {
+            margin-top: 50px;
+            background-color: #ffffff; /* Warna latar belakang container */
+            border: 2px solid #f8f9fa; /* Warna dan lebar border dapat disesuaikan */
+            border-radius: 10px; /* Memberikan sudut border yang terbulat */
+            padding: 20px; /* Menambahkan ruang dalam elemen border */
+            margin-bottom: 50px;
+        }
+
+        .section-container {
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .rounded-photo {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .rounded-photo img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover; /* Menjaga proporsi asli dan memotong gambar yang berlebihan */
+            border-radius: 10px 10px 0 0;
+        }
+
+        .social-icons {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #ffffff;
+            padding: 10px;
+        }
+
+        .profile-info h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .profile-container {
+        margin-top: 20px; /* Atur jarak atas sesuai kebutuhan Anda */
+        margin-bottom: 20px; /* Atur jarak bawah sesuai kebutuhan Anda */
+        margin-right: 20px; /* Atur jarak di samping (horizontal) sesuai kebutuhan Anda */
+        display: inline-block; /* Memastikan elemen tampil di samping yang lain */
+        }
+
+        .custom-container {
+        max-width: 300px; /* Atur lebar maksimum sesuai kebutuhan Anda */
+        margin: 0 auto; /* Agar container berada di tengah */
+        background-color: #ffffff; /* Warna latar belakang container */
+        border: 2px solid #f8f9fa; /* Warna dan lebar border dapat disesuaikan */
+        border-radius: 10px; /* Memberikan sudut border yang terbulat */
+        padding: 40px; /* Menambahkan ruang dalam elemen border */
+        margin-bottom: 50px;
+        }
+
+        .custom-container-top-margin {
+            margin-top: 20px; /* Sesuaikan nilai top margin sesuai kebutuhan */
+        }
+
+        .container {
+            margin-top: 50px;
+            background-color: #ffffff; /* Warna latar belakang container */
+            border: 2px solid #f8f9fa; /* Warna dan lebar border dapat disesuaikan */
+            border-radius: 10px; /* Memberikan sudut border yang terbulat */
+            padding: 20px; /* Menambahkan ruang dalam elemen border */
+            margin-bottom: 50px;
+        }
+
+        .section-container {
+            background-color: #ffffff; /* Warna latar belakang section-container */
+            border: 2px solid #f8f9fa; /* Warna dan lebar border dapat disesuaikan */
+            border-radius: 10px; /* Memberikan sudut border yang terbulat */
+            padding: 20px; /* Menambahkan ruang dalam elemen border */
+            margin-bottom: 50px;
+        }
+
+        .top-section1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Jarak atas (margin-top) dapat disesuaikan sesuai kebutuhan */
+            margin-top: 10px;
+        }
+
+        .profile-container {
+            margin-right: 20px; /* Atur jarak di samping (horizontal) sesuai kebutuhan Anda */
+            display: inline-block; /* Memastikan elemen tampil di samping yang lain */
+        }
+
+        #penjelasan {
+            text-align: justify; /* Menyesuaikan teks agar rata kiri-kanan */
+        }
+
+        /* Sesuaikan gaya lainnya sesuai kebutuhan Anda */
+        .text-body {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .mb-8 {
+            margin-bottom: 10px;
+        }
+
+        .mb-4 {
+            margin-bottom: 10px;
+        }
+
+        .mb-4 {
+            margin-bottom: 10px;
+        }
+
+        .mb-4 {
+            margin-bottom: 10px;
+        }
+
+
+    
+    </style>
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active d-flex justify-content-center align-items-center">
+                    <img class="w-100 smaller-image" src="static/images/carousel-3.jpg" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+     <!-- penjelasan -->
+        <div id="penjelasan" class="section-container">
+            <h4 class="text-body mb-8">CCTV keamanan untuk tindak kejahatan</h4>
+            <h4 class="text-body mb-4">Keamanan publik adalah salah satu aspek yang sangat penting dalam menjaga ketertiban masyarakat dan melindungi individu serta properti mereka. Dalam era yang semakin kompleks ini, tantangan terhadap keamanan publik semakin beragam, termasuk ancaman kejahatan, tindakan kriminal, dan situasi darurat yang dapat timbul secara tiba-tiba. Oleh karena itu, pengembangan teknologi yang dapat membantu mendeteksi tindak kejahatan secara dini dan memberikan notifikasi darurat yang cepat telah menjadi sangat penting.</h4>
+            <p class="mb-4">Salah satu solusi yang berkembang pesat dalam menjawab tantangan ini adalah penggunaan Sensor Keamanan Pendeteksi Tindak Kejahatan dan Notifikasi Darurat. Teknologi ini menggabungkan sensor canggih, analisis data, dan kemampuan notifikasi otomatis untuk meningkatkan kemampuan pengawasan keamanan di berbagai lingkungan, mulai dari pusat perbelanjaan hingga perkantoran, sekolah, dan tempat-tempat umum lainnya. Sensor keamanan ini memiliki peran penting dalam meningkatkan respons terhadap ancaman keamanan, mencegah tindakan kriminal, dan memberikan perlindungan lebih baik bagi masyarakat.</p>
+            <!-- Tambahkan elemen HTML untuk penjelasan lainnya sesuai kebutuhan Anda -->
+        </div>
+    </div>
+    
+    <div>
+        <h2>Kamera Deteksi</h2>
+        <div class="top-section">
+            <video id="videoElement" autoplay playsinline></video>
+        </div>
+            <div class="bottom-section">
+                <button id="mulaiDeteksi">Deteksi</button>
+                <button id="resetCamera">Mulai Ulang</button>  
+            </div>    
+        </div>
+    </div>
+
+    <div>
+            <div class="top-section1 text-center">
+                <!-- Jarak atas (margin-top) dapat disesuaikan sesuai kebutuhan -->
+                <p id="h3">Supervised by:</p>
+            </div>
+            <div class="bottom-section1 card-deck">
+                    <div class="card profile-card" style="width: 18rem;">
+                        <img class="card-img-top rounded-top w-100 object-fit-cover img-custom-size" src="static/images/ka angel.jpg" alt="Foto Profil 1">
+                        <div class="card-body">
+                            <h2 class="card-title">Angel Metanosa Afinda, S.Kom., M.Kom.</h2>
+                            <p class="card-text text-white m-0">Orbit Future Academy</p>
+                            <p class="text-white m-0">(AI Coach)</p>
+                            <a class="btn btn-outline-secondary btn-square m-1" href="https://www.linkedin.com/in/brian-kerta-raharja-471b531b0"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            <a class="btn btn-outline-secondary btn-square m-1" href="https://instagram.com/briankerta?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- penjelasan end -->
+    <div class="profiles-container">
+            <div class="top-section1">
+                <p id="h3">Profile Team</p>
+            </div>
+            <div class="bottom-section1 card-deck">
+                <!-- Profile 1 -->
+                <div class="card profile-card" style="width: 18rem;">
+                    <img class="card-img-top rounded-top w-100 object-fit-cover img-custom-size" src="static/images/alkan.jpg" alt="Foto Profil 1">
+                    <div class="card-body">
+                        <h2 class="card-title">Alkat Zakaria</h2>
+                        <p class="card-text text-white m-0">Universitas Saintek Muhammadiyah Jakarta</p>
+                        <p class="text-white m-0">Database Administrator, Content Writer, Tester</p>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://www.linkedin.com/in/brian-kerta-raharja-471b531b0"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://instagram.com/briankerta?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"><i class="fab fa-instagram fw-normal"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Profile 2 -->
+                <div class="card profile-card" style="width: 18rem;">
+                    <img class="card-img-top rounded-top w-100 object-fit-cover img-custom-size" src="static/images/orang2.jpg" alt="Foto Profil 2">
+                    <div class="card-body">
+                        <h2 class="card-title">Defi Afrilia</h2>
+                        <p class="card-text text-white m-0">STMIK Jakarta STI&K</p>
+                        <p class="text-white m-0">AI Developer, Back-End Developer, Content Writer, Front-End Developer</p>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://www.linkedin.com/in/brian-kerta-raharja-471b531b0"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://instagram.com/briankerta?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"><i class="fab fa-instagram fw-normal"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Profile 3 -->
+                <div class="card profile-card" style="width: 18rem;">
+                    <img class="card-img-top rounded-top w-100 object-fit-cover img-custom-size" src="static/images/orang5.jpg" alt="Foto Profil 5">
+                    <div class="card-body">
+                        <h2 class="card-title">Moch. Daffa Ryandhana</h2>
+                        <p class="card-text text-white m-0">Universitas Singaperbangsa Karawang</p>
+                        <p class="text-white m-0">Project manager, UI/UX Designer, Content writer, Front-End Developer, Graphic Designer</p>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://www.linkedin.com/in/brian-kerta-raharja-471b531b0"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://instagram.com/briankerta?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"><i class="fab fa-instagram fw-normal"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Profile 4 -->
+                <div class="card profile-card" style="width: 18rem;">
+                    <img class="card-img-top rounded-top w-100 object-fit-cover img-custom-size" src="static/images/orang4.jpg" alt="Foto Profil 4">
+                    <div class="card-body">
+                        <h2 class="card-title">Brian Kerta Raharja</h2>
+                        <p class="card-text text-white m-0">Universitas Pancasila</p>
+                        <p class="text-white m-0">Idea Creator, Database Administrator, Content Writer</p>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://www.linkedin.com/in/brian-kerta-raharja-471b531b0"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://instagram.com/briankerta?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"><i class="fab fa-instagram fw-normal"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Profile 5 -->
+                <div class="card profile-card" style="width: 18rem;">
+                    <img class="card-img-top rounded-top w-100 object-fit-cover img-custom-size" src="static/images/orang3.jpg" alt="Foto Profil 3">
+                    <div class="card-body">
+                        <h2 class="card-title">Ria Lindawati</h2>
+                        <p class="card-text text-white m-0">Universitas Bina Sarana Informatika Jakarta</p>
+                        <p class="text-white m-0"> Note Writer, Content Writer, Graphic Designer, Database Administrator </p>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://www.linkedin.com/in/brian-kerta-raharja-471b531b0"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                        <a class="btn btn-outline-secondary btn-square m-1" href="https://instagram.com/briankerta?igshid=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"><i class="fab fa-instagram fw-normal"></i></a>
+                    </div>
+                </div>
+            </div>
+    </div>
+        
+
+
+    <div>
+        <footer class="main-footer">
+            <div class="main-footer__shape-1 img-bounce"></div>
+            
+                <div class="main-footer__bottom">
+                        <div class="main-footer__bottom-inner">
+            <div class="row g-5">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-md-0 text-white m-0">&copy; Designed by <a class=" text-white m-0 border-bottom" href="https://philocalist-project.vercel.app">PHILOCALIST Team</a>. 2023.</p>
+                </div>
+            </div>
+        </footer>    
+    </div>
+
+
+    <a href="#" class="btn btn-lg btn-secondary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <script>
+        let videoStream; // Untuk menyimpan stream video
+
+        async function setupWebcam() {
+        const videoElement = document.getElementById('videoElement');
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                videoElement.srcObject = stream;
+                videoStream = stream; // Simpan stream video ke variabel
+            } catch (error) {
+                console.error('Error accessing webcam:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setupWebcam(); // Pastikan elemen video telah dimuat sebelum mengaksesnya
+            // Menambahkan event listener dan kode lainnya di sini
+        });
+
+        const startAbsensiButton = document.getElementById('mulaiDeteksi');
+        startAbsensiButton.addEventListener('click', async function(){
+            const videoElement = document.getElementById('videoElement');
+            const canvas = document.createElement('canvas');
+            canvas.width = videoElement.videoWidth;
+            canvas.height = videoElement.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+            // Menampilkan gambar yang diambil pada bekas tampilan kamera
+            videoElement.style.display = 'none'; // Sembunyikan video
+            const imageElement = document.createElement('img');
+            const imageDataURL = canvas.toDataURL('image/jpeg');
+            imageElement.src = imageDataURL;
+            imageElement.style.borderRadius = '5px';
+            videoElement.parentNode.replaceChild(imageElement, videoElement);
+            
+            // Ambil data gambar sebagai blob
+            canvas.toBlob(async function(blob) {
+                // Buat objek FormData dan tambahkan blob gambar ke dalamnya
+                const formData = new FormData();
+                formData.append('image', blob);
+
+                // Kirim permintaan POST dengan FormData yang berisi blob gambar
+                const response = await fetch('/startDetection', { method: 'POST',body: formData });
+                const data = await response.json();
+                const gambar = data.image_url;
+                // Ubah sumber gambar pada elemen <img> dengan hasil deteksi dari server Flask
+                imageElement.src = gambar;
+            }, 'image/jpeg');
+
+            // Hapus file-file dalam folder "Testing"
+            //await fetch('/deleteTestingFiles', { method: 'POST' });
+        });
+        document.getElementById("resetCamera").addEventListener("click", function() {
+            location.reload();
+        });
+    </script>
+</body>
+</html>
